@@ -1,0 +1,105 @@
+{
+  "name": "dsh-pocket-lan",
+  "description": "把 DeepSeek Harness 装进你的口袋：一个包、一个设置页，手机扫码即同步访问电脑上的 DSH（局域网 + 公网，实时同屏）。",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": {
+    "dsh-pocket-lan": "bin/dsh-pocket.mjs"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "本地修改声明.md",
+    "安装说明-必读.txt"
+  ],
+  "scripts": {
+    "build:client": "node client/build.mjs",
+    "release": "semantic-release",
+    "test": "node --test --test-timeout=30000 \"test/*.test.js\"",
+    "test:local": "node --test --test-timeout=300000 \"test/local/*.test.js\""
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "esbuild": "^0.25.9",
+    "semantic-release": "^24.2.9",
+    "ws": "^8.18.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0-rc.1 <0.2.0 || >=0.2.0 <0.3.0-0 || >=0.2.2-0 <0.3.0-0"
+  },
+  "license": "GPL-2.0",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "mobile",
+    "remote",
+    "qr",
+    "tunnel"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-session-log-export"
+      ],
+      "platform": "web"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baiqiuzhang/dsh-pocket-lan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baiqiuzhang/dsh-pocket-lan/issues"
+  },
+  "homepage": "https://github.com/baiqiuzhang/dsh-pocket-lan#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.1.0",
+  "forkedFrom": {
+    "repo": "shaobeichen/dsh-pocket",
+    "version": "2.11.0",
+    "license": "GPL-2.0"
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "Pocket LAN (GPL fork)",
+    "summary": "GPL-2.0 fork of dsh-pocket 2.11.0 with two local patches: the LAN QR code embeds the access password, and a read-only /dsh-pocket/entry.json is exposed. Independent implementation of the same ideas as dsh-pocket-plus.",
+    "tags": [
+      "mobile",
+      "lan",
+      "qr",
+      "fork",
+      "gpl"
+    ]
+  }
+}
