@@ -4,6 +4,16 @@
 
 <h1 align="center">DSH Pocket</h1>
 
+**[中文](README.md) | English**
+
+> **Fork notice (GPL-2.0)**: this is a derivative of [`shaobeichen/dsh-pocket`](https://github.com/shaobeichen/dsh-pocket) **2.11.0** (GPL-2.0), not an upstream release. Upstream npm is 2.13.1; later versions are not merged.
+> GPL-2.0 §2(a) change statement: see `本地修改声明.md` — (1) the LAN QR code embeds the access password; (2) a read-only `/dsh-pocket/entry.json` is exposed.
+> These two overlap with the community `Mrsirlila/dsh-pocket-plus`, but this is an **independent implementation**. Do **not** install it together with upstream `dsh-pocket` or with `dsh-pocket-plus`. Original GPL-2.0 copyright preserved; modifications (c) 2026 baiqiuzhang.
+
+```
+dsh plugin --profile desktop add https://github.com/baiqiuzhang/dsh-pocket-lan/releases/download/v0.1.0/dsh-pocket-lan-0.1.0.tgz
+```
+
 <p align="center"><a href="README.en.md">English</a> | <a href="README.md">中文</a></p>
 
 <p align="center"><a href="https://trendshift.io/repositories/166736?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-166736" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/166736/daily?language=JavaScript" alt="shaobeichen%2Fdsh-pocket | Trendshift" width="250" height="55"/></a></p>

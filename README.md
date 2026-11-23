@@ -7,6 +7,8 @@
 > 这两项与社区已上架的 `Mrsirlila/dsh-pocket-plus` 功能重叠，但本仓库是**独立实现**（不是其代码拷贝）。
 > 与原 `dsh-pocket`、以及 `dsh-pocket-plus` 都**不要同时安装**。修改部分版权归 baiqiuzhang，原版权与 GPL-2.0 许可完整保留。
 
+**[English](README.en.md) | 中文**
+
 ```
 dsh plugin --profile desktop add https://github.com/baiqiuzhang/dsh-pocket-lan/releases/download/v0.1.0/dsh-pocket-lan-0.1.0.tgz
 ```
